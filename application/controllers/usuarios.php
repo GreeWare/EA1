@@ -31,13 +31,13 @@
     		$apellidos = $this->input->post('apellidos');
     		$telefono = $this->input->post('telefono');
     		$email = $this->input->post('email');
-    		$password = $this->input->post('contraseña');
+    		$password = $this->input->post('contrasena');
 
     		$this->form_validation->set_rules('name', 'Nombre', 'trim|required');
     		$this->form_validation->set_rules('apellidos', 'Apellidos', 'trim|required');
     		$this->form_validation->set_rules('telefono', 'Telefóno', 'trim|required');
     		$this->form_validation->set_rules('email', 'Correo', 'trim|required');
-    		$this->form_validation->set_rules('contraseña', 'Contraseña', 'trim|required');
+    		$this->form_validation->set_rules('contrasena', 'Contraseña', 'trim|required');
 
     		$this->form_validation->set_message('required', 'El campo %s es obligatorio');
     		$this->form_validation->set_message('trim', 'El campo %s es obligatorio');
@@ -50,7 +50,7 @@
 
     			$this->load->view('plantilla/nav');
 				$this->load->view('plantilla/header');
-				$this->load->view('vw_registro');
+				$this->load->view('front_end/vw_registro');
 				$this->load->view('plantilla/footer');
 
     		}else
@@ -68,7 +68,7 @@
     				$Zmail['mail']= 0;
     				$this->load->view('plantilla/nav');
 					$this->load->view('plantilla/header');
-					$this->load->view('vw_registro', $Zmail);
+					$this->load->view('front_end/vw_registro', $Zmail);
 					$this->load->view('plantilla/footer');
 
     			}else{
@@ -87,10 +87,10 @@
             //Valida la información recibida del formulario de login mediante post
 
     		$email = $this->input->post('email');
-    		$password = $this->input->post('contraseña');
+    		$password = $this->input->post('contrasena');
 
     		$this->form_validation->set_rules('email', 'Correo', 'trim|required');
-    		$this->form_validation->set_rules('contraseña', 'Contraseña', 'trim|required');
+    		$this->form_validation->set_rules('contrasena', 'Contraseña', 'trim|required');
 
     		$this->form_validation->set_message('required', 'El campo %s es obligatorio');
     		$this->form_validation->set_message('trim', 'El campo %s es obligatorio');
@@ -103,7 +103,7 @@
 
     			$this->load->view('plantilla/nav');
 				$this->load->view('plantilla/header');
-				$this->load->view('vw_login');
+				$this->load->view('front_end/vw_login');
 				$this->load->view('plantilla/footer');
 
     		}else
@@ -122,7 +122,7 @@
                     $Vc['validar']= 0;
                     $this->load->view('plantilla/nav');
                     $this->load->view('plantilla/header');
-                    $this->load->view('vw_login', $Vc);
+                    $this->load->view('front_end/vw_login', $Vc);
                     $this->load->view('plantilla/footer');
                 }else{
                     $xar= $this->Mdl_Usuarios->login($email);

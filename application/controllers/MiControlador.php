@@ -35,20 +35,17 @@ class MiControlador extends CI_Controller{
 		$this->load->view('plantilla/header');
 		
 		switch ($opcion) {
-			case 1:
-			$this->load->view('vw_inicio');
+			case 1:	$this->load->view('front_end/vw_inicio');
 				break;
-			case 2:
-			 $this->load->view('vw_filosofia');
+			case 2: $this->load->view('front_end/vw_filosofia');
 				break;
-			case 3: 
-			$this->load->view('vw_registro');
+			case 3:	$this->load->view('front_end/vw_registro');
 				break;	
-			case 4: $this->load->view('vw_login');
+			case 4: $this->load->view('front_end/vw_login');
 				break;	
-			case 5: $this->load->view('vw_perfil');	
+			case 5: $this->load->view('front_end/vw_perfil');	
 				break;
-			case 6: $this->load->view('vw_donaciones');	
+			case 6: $this->load->view('front_end/vw_donaciones');	
 				break;
 				
 		

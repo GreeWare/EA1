@@ -24,6 +24,6 @@ class generos extends CI_Controller
         $this->load->view('plantilla/header');
         $this->load->view('plantilla/nav');
         $data['generos'] = $this->mdl_Generos->listar();
-        $this->load->view('vw_generos',$data); 
+        $this->load->view('front_end/vw_generos',$data); 
     }
 }

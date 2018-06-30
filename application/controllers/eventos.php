@@ -25,7 +25,7 @@ class eventos extends CI_Controller
         $this->load->view('plantilla/header');
         $this->load->view('plantilla/nav');
         $data['eventos'] = $this->mdl_Eventos->listar();
-        $this->load->view('vw_eventos',$data); 
+        $this->load->view('front_end/vw_eventos',$data); 
          $this->load->view('plantilla/footer');
     }
 }

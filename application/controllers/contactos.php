@@ -23,7 +23,7 @@ class contactos extends CI_Controller
         $this->load->view('plantilla/header');
         $this->load->view('plantilla/nav');
         $data['contactos'] = $this->mdl_Contactos->listar();
-        $this->load->view('vw_contactos',$data); 
-         $this->load->view('plantilla/footer');
+        $this->load->view('front_end/vw_contactos',$data); 
+        $this->load->view('plantilla/footer');
     }
 }

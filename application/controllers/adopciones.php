@@ -27,7 +27,7 @@ class adopciones extends CI_Controller
         $this->load->view('plantilla/header');
         $this->load->view('plantilla/nav');
         $data['adopciones'] = $this->mdl_Adopciones->listar();
-        $this->load->view('vw_adopciones',$data); 
+        $this->load->view('front_end/vw_adopciones',$data); 
          $this->load->view('plantilla/footer');
     }
 

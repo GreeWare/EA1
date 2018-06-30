@@ -41,7 +41,7 @@
                                         <label>Correo Electrónico: </label><br>
                                         <input placeholder="Correo Electrónico" type="text" name="email"><br>
                                         <label>Contraseña: </label><br>
-                                        <input placeholder="Contraseña" type="text" name="contraseña"><br>
+                                        <input placeholder="Contraseña" type="password" name="contrasena"><br>
                                         <button  type="submit" value="Registrar" class="btn btn-success">Ingresar</a>
                                         <!--<button type="submit">Ingresar</button>-->
                                 </form>

@@ -63,7 +63,7 @@
                                         <div class="validation"></div>
                                     </div>
                                     <div class="field subject form-group">
-                                        <input type="text" class="form-control"  id="pass" placeholder="Contraseña" data-rule="minlen:8" data-msg="Introduzca 8 letras mínimo" />
+                                        <input type="password" class="form-control" name="contrasena"  id="pass" placeholder="Contraseña" data-rule="minlen:8" data-msg="Introduzca 8 letras mínimo" />
                                         <div class="validation"></div>
                                     </div>
 

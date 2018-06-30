@@ -29,18 +29,18 @@
 		<!-- ./container -->
 	</footer>
 	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
-	<script src="http://localhost/EA2/js/jquery.js"></script>
-	<script src="http://localhost/EA2/js/jquery.scrollTo.js"></script>
-	<script src="http://localhost/EA2/js/jquery.nav.js"></script>
-	<script src="http://localhost/EA2/js/jquery.localScroll.js"></script>
-	<script src="http://localhost/EA2/js/bootstrap.js"></script>
-	<script src="http://localhost/EA2/js/jquery.prettyPhoto.js"></script>
-	<script src="http://localhost/EA2/js/isotope.js"></script>
-	<script src="http://localhost/EA2/js/jquery.flexslider.js"></script>
-	<script src="http://localhost/EA2/js/inview.js"></script>
-	<script src="http://localhost/EA2/js/animate.js"></script>
-	<script src="http://localhost/EA2/js/custom.js"></script>
-	<script src="http://localhost/EA2/contactform/contactform.js"></script>
+	<script src="<?=base_url()?>/js/jquery.js"></script>
+	<script src="<?=base_url()?>/js/jquery.scrollTo.js"></script>
+	<script src="<?=base_url()?>/js/jquery.nav.js"></script>
+	<script src="<?=base_url()?>/js/jquery.localScroll.js"></script>
+	<script src="<?=base_url()?>/js/bootstrap.js"></script>
+	<script src="<?=base_url()?>/js/jquery.prettyPhoto.js"></script>
+	<script src="<?=base_url()?>/js/isotope.js"></script>
+	<script src="<?=base_url()?>/js/jquery.flexslider.js"></script>
+	<script src="<?=base_url()?>/js/inview.js"></script>
+	<script src="<?=base_url()?>/js/animate.js"></script>
+	<script src="<?=base_url()?>/js/custom.js"></script>
+	<script src="<?=base_url()?>/contactform/contactform.js"></script>
 
 </body>
 
