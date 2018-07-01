@@ -23,7 +23,8 @@ class adopciones extends CI_Controller
         *Realiza el proceso de mostrar las adopciones
         */
 
-    	public function listar(){
+    	public function listar()
+        {
         $this->load->view('plantilla/header');
         $this->load->view('plantilla/nav');
         $data['adopciones'] = $this->mdl_Adopciones->listar();
@@ -33,36 +34,7 @@ class adopciones extends CI_Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

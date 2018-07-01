@@ -138,7 +138,7 @@
                     //Crea la sesión con los datos del array
                     //Redirecciona al perfil de usuario
                     $this->session->set_userdata($usuario_data);
-                    redirect('MiControlador/index/5');
+                    redirect('adopcionesCrud/bootstrap_theme');
                 }
     		}
     	}

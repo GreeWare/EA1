@@ -32,7 +32,7 @@
               <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/eventos/listar';?>">Eventos</a>
             <?php if($this->session->has_userdata('idUsuario')){ ?>
                 <li class="nav-item px-lg-4">
-                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/Micontrolador/index/5';?>">Perfil</a>
+                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/adopcionesCrud/index';?>">Perfil</a>
                 </li>
               <?php }else{ ?>
                 <li class="nav-item px-lg-4">
