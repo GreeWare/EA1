@@ -25,58 +25,28 @@
         */
     	public function save()
     	{
-            //Valida la información recibida del formulario de registro mediante post
+
+            $this->Mdl_Usuarios->setnombreUsuario($this->input->post('name'));
+            $this->Mdl_Usuarios->setapellidosUsuario($this->input->post('apellidos'));
+            $this->Mdl_Usuarios->settelefonoUsuario($this->input->post('telefono'));
+            $this->Mdl_Usuarios->setemailUsuario($this->input->post('email'));
+            $this->Mdl_Usuarios->setcontraseñaUsuario($this->input->post('contraseña'));
+
+            //$email_check=$this->Mdl_Usuarios->email_check($this->Mdl_Usuarios->getemailUsuario);
+
+            /**
+            * if($email_check){
+            *   $this->Mdl_Usuarios->save();
+            *   $this->session->set_flashdata('seccess_msg', 'Registro satisfactorio');
+            *   redirect('user/login_view');
+            *}else{
+            *   $this->session->set_flashdata('error_msg', 'Ocurrio un error. Intenta de nuevo');
+            *   redirect('user');
+            *}
+            */
+
+            $this->Mdl_Usuarios->save();
             
-    		$nombre = $this->input->post('name');
-    		$apellidos = $this->input->post('apellidos');
-    		$telefono = $this->input->post('telefono');
-    		$email = $this->input->post('email');
-    		$password = $this->input->post('contrasena');
-
-    		$this->form_validation->set_rules('name', 'Nombre', 'trim|required');
-    		$this->form_validation->set_rules('apellidos', 'Apellidos', 'trim|required');
-    		$this->form_validation->set_rules('telefono', 'Telefóno', 'trim|required');
-    		$this->form_validation->set_rules('email', 'Correo', 'trim|required');
-    		$this->form_validation->set_rules('contrasena', 'Contraseña', 'trim|required');
-
-    		$this->form_validation->set_message('required', 'El campo %s es obligatorio');
-    		$this->form_validation->set_message('trim', 'El campo %s es obligatorio');
-
-            //Si los datos son validados, envía los datos como parámetros a la función “save” al modelo “Mdl_Usuarios”
-            //Si los datos no son validados, regresa al formulario de registro con los mensajes de errores correspondientes
-            
-    		if($this->form_validation->run()===FALSE)
-    		{
-
-    			$this->load->view('plantilla/nav');
-				$this->load->view('plantilla/header');
-				$this->load->view('front_end/vw_registro');
-				$this->load->view('plantilla/footer');
-
-    		}else
-    		{
-    			$var= $this->Mdl_Usuarios->save($nombre, $apellidos, $telefono, $email, $password);
-
-                //Valida si los datos enviados fueron registrados
-                //Si los datos fueron registrados envía al formulario de login
-                //Si los datos no fueron registrados regresa al formulario de registro y envía una variable con un valor para mostrar un error en el formulario
-                
-                //@var integer $Zmail; envia un dato al formulario de registro
-
-    			if($var == 0)
-    			{
-    				$Zmail['mail']= 0;
-    				$this->load->view('plantilla/nav');
-					$this->load->view('plantilla/header');
-					$this->load->view('front_end/vw_registro', $Zmail);
-					$this->load->view('plantilla/footer');
-
-    			}else{
-
-    				redirect('MiControlador/index/4');
-
-    			}
-    		}
     	}
 
         /**

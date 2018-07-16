@@ -11,58 +11,80 @@
 	class Mdl_Usuarios extends CI_Model
 	{
 
+        private $_idUsuario;
+        private $_nombreUsuario;
+        private $_apellidosUsuario;
+        private $_telefonoUsuario;
+        private $_emailUsuario;
+        private $_contraseñaUsuario;
+
 		function __construct()
 		{
 			parent::__construct(); 
 		}
 
+        public function getidUsuario(){
+            return $this->_idUsuario;
+        }
+
+        public function setidUsuario($_idUsuario){
+            $this->_idUsuario = $_idUsuario;
+        }
+
+        public function getnombreUsuario(){
+            return $this->_nombreUsuario;
+        }
+
+        public function setnombreUsuario($_nombreUsuario){
+            $this->_nombreUsuario = $_nombreUsuario;
+        }
+
+        public function getapellidosUsuario(){
+            return $this->_apellidosUsuario;
+        }
+
+        public function setapellidosUsuario($_apellidosUsuario){
+            $this->_apellidosUsuario = $_apellidosUsuario;
+        }
+
+        public function gettelefonoUsuario(){
+            return $this->_telefonoUsuario;
+        }
+
+        public function settelefonoUsuario($_telefonoUsuario){
+            $this->_telefonoUsuario = $_telefonoUsuario;
+        }
+
+        public function getemailUsuario(){
+            return $this->_emailUsuario;
+        }
+
+        public function setemailUsuario($_emailUsuario){
+            $this->_emailUsuario = $_emailUsuario;
+        }
+
+        public function getcontraseñaUsuario(){
+            return $this->_contraseñaUsuario;
+        }
+
+        public function setcontraseñaUsuario($_contraseñaUsuario){
+            $this->_contraseñaUsuario = $_contraseñaUsuario;
+        }
+
         /**
         *Realiza la función de registrar los datos del usuario en la base de datos
-        *
-        *@param string $nombre; nombre del usuario
-        *@param string $apellidos; apellidos del usuario
-        *@param string $telefono; teléfono del usuario
-        *@param string $email; correo electrónico del usuario
-        *@param string $password; contraseña del usuario
         */
-		public function save($nombre, $apellidos, $telefono, $email, $password)
+		public function save()
         {
 
-            //Envía el parámetro $email a la función “validarEmail” del mismo modelo.
-            //Si $email es validado, realiza el proceso de registrar los datos del usuario en la base de datos
-            //Si $email no es validado, retorna un valor 0. 
-            
-            //@return interger 0 si el email no es validado
-            //@var array $data; datos del usuario para registrar en la base de datos
-            //@var array $data2; datos de los privilegios del usuario
-        	if($this->validarEmail($email) == 1)
-        	{
-        		return 0;
-        	}else
-        	{
-                //En este proceso se encripta la contraseña en md5
-                //Los datos son colocados en un array para ser registrados
-                //Se obtiene el id del último registro en la tabla “usuarios”
-                //Se registra con otro array el valor del privilegio del usuario y se envía el id obtenido para ser llave foránea
-            
-                //@return interger 1 si los datos fueron registrados en sus correspondientes tablas
-        		$pass = md5($password);
-	            $data = array(
-	                'nombreUsuario'=>$nombre,
-	                'apellidosUsuario'=>$apellidos,
-	                'telefonoUsuario'=> $telefono,
-	                'emailUsuario'=>$email,
-	                'contraseñaUsuario'=>$pass
-	            );
-	            $this->db->insert('usuarios', $data);
-	            $idU = $this->db->insert_id();
-	            $data2 = array(
-	            	'estatusUsuarioNormal'=>3,
-	            	'usuarios_idUsuario'=>$idU
-	            );
-	            $this->db->insert('usuariosnormal', $data2);
-	            return 1;
-        	}
+            $this->db->set('idUsuario', 0)
+                     ->set('nombreUsuario',$this->_nombreUsuario)
+                     ->set('apellidosUsuario', $this->_apellidosUsuario)
+                     ->set('telefonoUsuario', $this->_telefonoUsuario)
+                     ->set('emailUsuario', $this->_emailUsuario)
+                     ->set('contraseñaUsuario', "AES_ENCRYPT('{$this->_nombreUsuario}','{$this->_contraseñaUsuario}')", FALSE);
+
+            $this->db->insert('usuarios');
 
         }
 
