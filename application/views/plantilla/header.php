@@ -8,9 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="<?=base_url()?>/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="<?=base_url()?>/css/style.css" rel="stylesheet">
-    <link href="<?=base_url()?>/color/default.css" rel="stylesheet">
+    <link href="<?=base_url();?>/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/color/default.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?=base_url()?>/img/favicon.ico">
     
     <!-- =======================================================

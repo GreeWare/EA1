@@ -19,7 +19,7 @@
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Maxim
               -->
               				
-        					 <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/Micontrolador/index/2';?>">¿Quienes somos?</a>
+        					 <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/MiControlador/index/2';?>">¿Quienes somos?</a>
 							
 						</div>
 					</p>

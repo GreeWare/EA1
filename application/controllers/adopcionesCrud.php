@@ -4,7 +4,7 @@
 /**
  * 
  */
-class adopcionesCrud extends CI_Controller
+class AdopcionesCrud extends CI_Controller
 {
 	
 	function __construct()
@@ -37,7 +37,18 @@ class adopcionesCrud extends CI_Controller
 
 
 		$crud->display_as($campos);
-		$crud->set_field_upload('imagenAdopcion', '../EA1/');
+
+		//try {
+
+			
+			
+		//} catch (Exception $e) {
+
+			$crud->set_field_upload('imagenAdopcion', 'img/../');
+			
+		//}
+
+		
 		 
 		$output = $crud->render();
 

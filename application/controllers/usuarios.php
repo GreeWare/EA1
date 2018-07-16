@@ -10,7 +10,7 @@
     *@since Archivo disponible desde la versión 1.0.0
     *@deprecated Archivo no disponible a parteir de la versión 2.0.0
     */
-	class usuarios extends CI_Controller
+	class Usuarios extends CI_Controller
 	{
 
 		function __construct() {
@@ -138,7 +138,7 @@
                     //Crea la sesión con los datos del array
                     //Redirecciona al perfil de usuario
                     $this->session->set_userdata($usuario_data);
-                    redirect('adopcionesCrud/bootstrap_theme');
+                    redirect('AdopcionesCrud/index');
                 }
     		}
     	}

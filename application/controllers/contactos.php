@@ -8,7 +8,7 @@
     *@deprecated Archivo no disponible a parteir de la versión 2.0.0
     */
 
-class contactos extends CI_Controller
+class Contactos extends CI_Controller
 {
         function __construct() {
         parent::__construct();

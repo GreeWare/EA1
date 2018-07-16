@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="span6 aligncenter">
 
-                                <form action="<?php echo base_url().'index.php/usuarios/login';?>" method="post">
+                                <form action="<?php echo base_url().'index.php/Usuarios/login';?>" method="post">
             
                                         <label>Correo Electrónico: </label><br>
                                         <input placeholder="Correo Electrónico" type="text" name="email"><br>

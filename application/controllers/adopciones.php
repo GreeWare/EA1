@@ -10,7 +10,7 @@
     */
 
 
-class adopciones extends CI_Controller
+class Adopciones extends CI_Controller
 {
     
         function __construct() {

@@ -1,6 +1,3 @@
-
-
-
     <div class="navbar-wrapper">
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -8,7 +5,7 @@
           <!-- Responsive navbar -->
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
         </a>
-         <img src="<?=base_url();?>img/logo.fw.png" width="300" height="300"alt="" />
+         <a href="<?=base_url();?>index.php/MiControlador/index/1"><img src="<?=base_url();?>img/logo.fw.png" width="300" height="300"alt="" /></a>
           <!-- navigation -->
           <nav class="pull-right nav-collapse collapse">
             <ul id="menu-main" class="nav">
@@ -20,26 +17,26 @@
             </li>
 
               <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded"  href="<?=base_url().'index.php/historias/listar';?>">Historias</a>
+              <a class="nav-link text-uppercase text-expanded"  href="<?=base_url().'index.php/Historias/listar';?>">Historias</a>
             </li> 
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded"  href="<?=base_url().'index.php/adopciones/listar';?>">Adopciones</a>
+              <a class="nav-link text-uppercase text-expanded"  href="<?=base_url().'index.php/Adopciones/listar';?>">Adopciones</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/Micontrolador/index/6';?>">Donaciones</a>
+              <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/MiControlador/index/6';?>">Donaciones</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/eventos/listar';?>">Eventos</a>
+              <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/Eventos/listar';?>">Eventos</a>
             <?php if($this->session->has_userdata('idUsuario')){ ?>
                 <li class="nav-item px-lg-4">
-                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/adopcionesCrud/index';?>">Perfil</a>
+                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/AdopcionesCrud/index';?>">Perfil</a>
                 </li>
               <?php }else{ ?>
                 <li class="nav-item px-lg-4">
-                  <a class="nav-link text-uppercase text-expanded"  href="<?=base_url().'index.php/Micontrolador/index/3';?>">Regístrate</a>
+                  <a class="nav-link text-uppercase text-expanded"  href="<?=base_url().'index.php/MiControlador/index/3';?>">Regístrate</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/Micontrolador/index/4';?>">Ingresa</a>
+                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/MiControlador/index/4';?>">Ingresa</a>
                 </li>
               <?php } ?>
              
