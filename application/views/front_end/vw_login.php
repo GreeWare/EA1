@@ -27,7 +27,7 @@
                                             echo 'Correo o contraseña incorrectos';
                                         }
 
-                                        if (isset($result)) {
+                                        if (isset($NoR)) {
                                             echo 'Registro satisfactorio';
                                         }
 

@@ -36,11 +36,17 @@
 
             if($email_check == 0){
                 $this->Mdl_Usuarios->save();
-                $result='Registro satisfactorio';
-                redirect('MiControlador/index/4');
+                $Vc['NoR']= 0;
+                $this->load->view('plantilla/nav');
+                $this->load->view('plantilla/header');
+                $this->load->view('front_end/vw_login', $Vc);
+                $this->load->view('plantilla/footer');
             }else{
-                $result='Ya hay una cuenta relacionada con el correo introducido';
-                redirect('MiControlador/index/3');
+                $Vc['YaR']= 0;
+                $this->load->view('plantilla/nav');
+                $this->load->view('plantilla/header');
+                $this->load->view('front_end/vw_registro', $Vc);
+                $this->load->view('plantilla/footer');
             }
             
     	}

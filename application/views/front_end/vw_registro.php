@@ -22,7 +22,7 @@
                 /**
                 *Valida si el registro se realizo correctamente o si ya existe el correo ingresado
                 */
-                if (isset($result)) {
+                if (isset($YaR)) {
                     echo 'Ya hay una cuenta relacionada al correo electrónico introducido';
                 }
 
