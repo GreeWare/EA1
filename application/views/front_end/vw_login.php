@@ -6,8 +6,12 @@
                 <div class="home-post">
                    <center><h3>Inicia tu sesión  </h3></center> 
                     <div class="cform" id="contact-form">
+            <div class="span3 aligncenter">
+                </div>
 
-                        <?php  
+                        <div class="row">
+                            <div class="span6 aligncenter">
+                                    <?php  
 
                                         /**
                                         *Muestra los mensajes de errores de la validación
@@ -23,19 +27,16 @@
                                             echo 'Correo o contraseña incorrectos';
                                         }
 
+                                        if (isset($result)) {
+                                            echo 'Registro satisfactorio';
+                                        }
+
                                     
                                     /**
                                     *Formulario que enviara los datos insertados de "email" y "contraseña" al controlador "usuarios"
                                     *Si los datos estan validados y son corectos, el controlador iniciará la sesión del suario
                                     */
                                     ?>
-
-            <div class="span3 aligncenter">
-                </div>
-
-                        <div class="row">
-                            <div class="span6 aligncenter">
-
                                 <form action="<?php echo base_url().'index.php/Usuarios/login';?>" method="post">
             
                                         <label>Correo Electrónico: </label><br>

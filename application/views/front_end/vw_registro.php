@@ -20,12 +20,10 @@
                 echo validation_errors();
                 
                 /**
-                *Valida si la vista recibió la variable $mail
-                *si $mail fue recibida mostrará el mensaje de error correspondiente
+                *Valida si el registro se realizo correctamente o si ya existe el correo ingresado
                 */
-                if(isset($mail))
-                {
-                    echo 'Ya existe una cuenta con el correo insertado.';
+                if (isset($result)) {
+                    echo 'Ya hay una cuenta relacionada al correo electrónico introducido';
                 }
 
             /**

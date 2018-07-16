@@ -32,20 +32,16 @@
             $this->Mdl_Usuarios->setemailUsuario($this->input->post('email'));
             $this->Mdl_Usuarios->setcontraseñaUsuario($this->input->post('contraseña'));
 
-            //$email_check=$this->Mdl_Usuarios->email_check($this->Mdl_Usuarios->getemailUsuario);
+            $email_check=$this->Mdl_Usuarios->email_check($this->Mdl_Usuarios->getemailUsuario());
 
-            /**
-            * if($email_check){
-            *   $this->Mdl_Usuarios->save();
-            *   $this->session->set_flashdata('seccess_msg', 'Registro satisfactorio');
-            *   redirect('user/login_view');
-            *}else{
-            *   $this->session->set_flashdata('error_msg', 'Ocurrio un error. Intenta de nuevo');
-            *   redirect('user');
-            *}
-            */
-
-            $this->Mdl_Usuarios->save();
+            if($email_check == 0){
+                $this->Mdl_Usuarios->save();
+                $result='Registro satisfactorio';
+                redirect('MiControlador/index/4');
+            }else{
+                $result='Ya hay una cuenta relacionada con el correo introducido';
+                redirect('MiControlador/index/3');
+            }
             
     	}
 

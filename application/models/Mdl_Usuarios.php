@@ -132,7 +132,7 @@
         *@return 1 si el email si está registrado
         *@var array del emial para realizar la consulta
         */
-    	public function validarEmail($email){
+    	public function email_check($email){
             $Vmail = array('emailUsuario'=>$email);
         	$this->db->where($Vmail);
         	$Xmail = $this->db->get('usuarios');
