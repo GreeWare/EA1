@@ -88,22 +88,30 @@
 
         }
 
-        /**
-        *Realiza la consulta en la tabla "usuarios" de la base de datos
-        *Obtiene las filas de la consulta
-        *
-        *@var array que lamacena el email para realizar la consulta en la base de datos
-        *@var String $ses; almacena los datos obtenidos de la consulta con el array
-        *@var String $resultado; almacena en filas los datos obtenidos de la variable $ses
-        *@return devuelve la variable $resultado
-        */
-        public function login($email)
+        public function login($emailUsuario, $contraseñaUsuario)
         {
-        	$data3 = array('emailUsuario'=>$email);
-        	$this->db->where($data3);
-        	$ses = $this->db->get('usuarios');
-        	$resultado = $ses->row();
-            return $resultado;
+
+            $Llave = $this->db->select("$emailUsuario, AES_ENCRYPT('$contraseñaUsuario') as pass");
+
+            $miLlave = $Llave->result();
+
+            foreach ($miLlave as $reg):
+                $pass2 = $reg->pass;
+            endforeach;
+
+        	$data = array(
+                'emailUsuario'=> $emailUsuario,
+                'contraseñaUsuario' => $pass2
+            );
+
+            $this->db->where($data);
+
+            if($query=$this->db->get('usuarios'))
+            {
+                return $query->row_array();
+            }else{
+                return false;
+            }
         }
 
         /**
