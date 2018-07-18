@@ -58,34 +58,32 @@
     	{
             $user_login= array(
                 'emailUsuario'=>$this->input->post('email'),
-                'contraseñaUsuario'=>$this->input->('contraseña')
+                'contraseñaUsuario'=>$this->input->post('contrasena')
             );
 
             $data= $this->Mdl_Usuarios->login($user_login['emailUsuario'],$user_login['contraseñaUsuario']);
 
-            if($data){
-                $this->Mdl_Usuarios->setnombreUsuario($this->input->post('name'));
-                $this->Mdl_Usuarios->setapellidosUsuario($this->input->post('apellidos'));
-                $this->Mdl_Usuarios->settelefonoUsuario($this->input->post('telefono'));
-                $this->Mdl_Usuarios->setemailUsuario($this->input->post('email'));
-                $this->Mdl_Usuarios->setcontraseñaUsuario($this->input->post('contraseña'));
-                redirect('MiControlador/index/1');
-            }
-                $xar= $this->Mdl_Usuarios->login($email);
+            if($data)
+            {
                 $usuario_data = array(
-                    'idUsuario'=> $xar->idUsuario,
-                    'nombreUsuario'=> $xar->nombreUsuario,
-                    'apellidosUsuario'=> $xar->apellidosUsuario,
-                    'telefonoUsuario'=> $xar->telefonoUsuario,
-                    'emailUsuario'=> $xar->emailUsuario,
-                    'contraseñaUsuario'=> $xar->contraseñaUsuario
+                    'idUsuario'=> $this->input->post('idUsuario'),
+                    'nombreUsuario'=> $this->input->post('nombreUsuario'),
+                    'apellidosUsuario'=> $this->input->post('apellidosUsuario'),
+                    'telefonoUsuario'=> $this->input->post('telefonoUsuario'),
+                    'emailUsuario'=> $this->input->post('emailUsuario'),
+                    'contraseñaUsuario'=> $this->input->post('contraseñaUsuario')
                 );
                     
                 //Crea la sesión con los datos del array
                 //Redirecciona al perfil de usuario
                 $this->session->set_userdata($usuario_data);
                 redirect('AdopcionesCrud/index');
-    		}
+
+            }else{
+
+                echo "Algo mal";
+            }
+    		
     	}
 
         /**
@@ -98,5 +96,3 @@
     	}
 
 	}
-
-?>

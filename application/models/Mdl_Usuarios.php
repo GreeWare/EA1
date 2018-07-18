@@ -82,7 +82,7 @@
                      ->set('apellidosUsuario', $this->_apellidosUsuario)
                      ->set('telefonoUsuario', $this->_telefonoUsuario)
                      ->set('emailUsuario', $this->_emailUsuario)
-                     ->set('contraseñaUsuario', "AES_ENCRYPT('{$this->_nombreUsuario}','{$this->_contraseñaUsuario}')", FALSE);
+                     ->set('contraseñaUsuario', "AES_ENCRYPT('{$this->_contraseñaUsuario}','{$this->_nombreUsuario}')", FALSE);
 
             $this->db->insert('usuarios');
 
@@ -90,8 +90,8 @@
 
         public function login($emailUsuario, $contraseñaUsuario)
         {
-
-            $Llave = $this->db->select("$emailUsuario, AES_ENCRYPT('$contraseñaUsuario') as pass");
+            $Llave = $this->db->select("AES_ENCRYPT('$contraseñaUsuario','$emailUsuario') as pass")
+                              ->get();
 
             $miLlave = $Llave->result();
 
@@ -99,12 +99,12 @@
                 $pass2 = $reg->pass;
             endforeach;
 
-        	$data = array(
+        	$datax = array(
                 'emailUsuario'=> $emailUsuario,
                 'contraseñaUsuario' => $pass2
             );
 
-            $this->db->where($data);
+            $this->db->where($datax);
 
             if($query=$this->db->get('usuarios'))
             {
@@ -113,25 +113,6 @@
                 return false;
             }
         }
-
-        /**
-        *Realiza la función de validar los datos para crear una sesión
-        *
-        *@param String $email; email ingresado en el formulario
-        *@param String $password; contraseña ingresada en el formulario
-        *@var array de los datos enviados del formulario
-        *@var String $usu; almacena los datos obtenidos de la consulta con el array
-        *@return devulve la cantidad de filas almacenadas en la variable $usu
-        */
-        public function validarLogin($email, $password)
-    	{
-			$pass = md5($password);
-
-			$dato = array('emailUsuario'=>$email, 'contraseñaUsuario'=>$pass);
-			$this->db->where($dato);
-			$usu = $this->db->get('usuarios');
-			return $usu->num_rows();
-    	}
 
         /**
         *Realiza la validación del email si está registrado en la base de datos
