@@ -52,7 +52,7 @@ class AdopcionesCrud extends CI_Controller
 		 
 		$output = $crud->render();
 
-		$this->load->view('front_end/vw_perfil.php', (array)$output);
+		$this->load->view('back_end/vw_adopcionesCRUD.php', (array)$output);
 
 
 		$this->load->view('plantilla/footer');
