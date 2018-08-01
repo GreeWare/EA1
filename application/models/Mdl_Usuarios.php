@@ -11,24 +11,25 @@
 	class Mdl_Usuarios extends CI_Model
 	{
 
-        private $_idUsuario;
+        private $_idUsuarios;
         private $_nombreUsuario;
         private $_apellidosUsuario;
         private $_telefonoUsuario;
         private $_emailUsuario;
         private $_contraseñaUsuario;
+        private $_estatusUsuario_idEstatusUsuarios;
 
 		function __construct()
 		{
 			parent::__construct(); 
 		}
 
-        public function getidUsuario(){
-            return $this->_idUsuario;
+        public function getidUsuarios(){
+            return $this->_idUsuarios;
         }
 
-        public function setidUsuario($_idUsuario){
-            $this->_idUsuario = $_idUsuario;
+        public function setidUsuario($_idUsuarios){
+            $this->_idUsuarios = $_idUsuarios;
         }
 
         public function getnombreUsuario(){
@@ -71,18 +72,28 @@
             $this->_contraseñaUsuario = $_contraseñaUsuario;
         }
 
+        public function getestatusUsuarios_idEstatusUsuarios(){
+            return $this->_estatusUsuarios_idEstatusUsuarios;
+        }
+
+        public function setestatusUsuarios_idEstatusUsuarios($_estatusUsuarios_idEstatusUsuarios){
+             $this->_estatusUsuarios_idEstatusUsuarios = $_estatusUsuarios_idEstatusUsuarios;
+        }
+
+
         /**
         *Realiza la función de registrar los datos del usuario en la base de datos
         */
 		public function save()
         {
 
-            $this->db->set('idUsuario', 0)
+            $this->db->set('idUsuarios', 0)
                      ->set('nombreUsuario',$this->_nombreUsuario)
                      ->set('apellidosUsuario', $this->_apellidosUsuario)
                      ->set('telefonoUsuario', $this->_telefonoUsuario)
                      ->set('emailUsuario', $this->_emailUsuario)
-                     ->set('contraseñaUsuario', "AES_ENCRYPT('{$this->_contraseñaUsuario}','{$this->_nombreUsuario}')", FALSE);
+                     ->set('contraseñaUsuario', "AES_ENCRYPT('{$this->_contraseñaUsuario}','{$this->_nombreUsuario}')", FALSE)
+                     ->set('estatusUsuarios_idEstatusUsuarios', 1);
 
             $this->db->insert('usuarios');
 

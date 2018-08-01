@@ -30,7 +30,7 @@
             $this->Mdl_Usuarios->setapellidosUsuario($this->input->post('apellidos'));
             $this->Mdl_Usuarios->settelefonoUsuario($this->input->post('telefono'));
             $this->Mdl_Usuarios->setemailUsuario($this->input->post('email'));
-            $this->Mdl_Usuarios->setcontraseñaUsuario($this->input->post('contraseña'));
+            $this->Mdl_Usuarios->setcontraseñaUsuario($this->input->post('contrasena'));
 
             $email_check=$this->Mdl_Usuarios->email_check($this->Mdl_Usuarios->getemailUsuario());
 
