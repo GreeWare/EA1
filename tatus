@@ -1,0 +1,89 @@
+[33mcommit a31212d098f87f8651a728449f0c52ebc7ddb01e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Akiaseru <36065286+Akiaseru@users.noreply.github.com>
+Date:   Wed Aug 1 12:47:40 2018 -0500
+
+    Se hicieron cambios en el formulario de registro
+
+[33mcommit 17e8092c59533dca0327bd8fafdac98ae02c81ee[m
+Author: Cone <conejo.jmv@gmail.com>
+Date:   Wed Aug 1 00:48:47 2018 -0700
+
+    se organizaron carpetas de front_end y back_end
+
+[33mcommit bceceefba88ac833e647ebd4c1dc0ec4b763bc6d[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Tue Jul 17 19:18:34 2018 -0500
+
+    LogIn en proceso
+
+[33mcommit 4698c23fb6de13c2f8fc7bb200bc338e5a5bbaa1[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Mon Jul 16 20:59:47 2018 -0500
+
+    Proceso de Login orientado a objetos
+
+[33mcommit b6acf41003e7cef1050746dd73e2e347c8c3afcc[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Mon Jul 16 14:35:49 2018 -0500
+
+    Corrección de los mensajes de validación de email
+
+[33mcommit b99707d1cdec84855904ed08a37de9761d740510[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Mon Jul 16 13:36:55 2018 -0500
+
+    Validación de correo lectronico registrado
+
+[33mcommit e22cfe643746cc8698f452d13e55fade6cf40f92[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Sun Jul 15 21:46:24 2018 -0500
+
+    Se implemento programacion orientada a objetos es registrar usuarios
+
+[33mcommit e73f7195f7fdec33b39424f2aeadb44877f7ba0c[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Sun Jul 15 21:30:25 2018 -0500
+
+    Se modificaron datos de databasephp
+
+[33mcommit 350ed79951b3e6e03614542bb454477faabcfc0b[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Sun Jul 15 21:05:04 2018 -0500
+
+    Se modificaron algunos errores en las rutas
+
+[33mcommit 5ca93fa6a2eaed4f648982a6f5065d3b2653226a[m
+Author: Cone <conejo.jmv@gmail.com>
+Date:   Sat Jul 14 14:21:27 2018 -0700
+
+    se corrijio el diseño de los formularios
+
+[33mcommit cd14f5aafada7ab472bdcae0948632f6d5c46f0c[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Sat Jun 30 22:29:46 2018 -0500
+
+    Se agrego una animación en wv_donaciones
+
+[33mcommit 10bcce5aa5bb94db3991d85eab1ed55dce0d2cc4[m
+Author: TheRoggerUTL <36090167+TheRogger@users.noreply.github.com>
+Date:   Sat Jun 30 22:15:03 2018 -0500
+
+    Se agrego la libreria Animate al proyecto
+
+[33mcommit 80e375bd45d86264fc91669481cf27a70eb837a4[m
+Author: Akiaseru <36065286+Akiaseru@users.noreply.github.com>
+Date:   Sat Jun 30 20:05:04 2018 -0500
+
+    Se implemento el Grocery Crud en el sitio
+
+[33mcommit 26adbe764d853bdfb0dc70a383e64326181db27a[m
+Author: Akiaseru <36065286+Akiaseru@users.noreply.github.com>
+Date:   Sat Jun 30 15:44:52 2018 -0500
+
+    Se corrigieron errores generales del codigo
+
+[33mcommit bcb59be6316d005c0eed50586a369e63c7f11abb[m
+Author: joanna <joanna.guerrero.campos@gmail.com>
+Date:   Sat Jun 30 00:51:48 2018 -0500
+
+    first commit

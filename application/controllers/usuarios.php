@@ -66,22 +66,33 @@
             if($data)
             {
                 $usuario_data = array(
+                    'idUsuarios'=> $data['idUsuarios'],
+                    'nombreUsuario'=> $data['nombreUsuario'],
+                    'apellidosUsuario'=> $data['apellidosUsuario'],
+                    'telefonoUsuario'=> $data['telefonoUsuario'],
+                    'emailUsuario'=> $data['emailUsuario'],
+                    'contraseñaUsuario'=> $data['contraseñaUsuario'],
+                    'estatususuarios_idEstatusUsuarios'=> $data['estatususuarios_idEstatusUsuarios']
+                    /*
                     'idUsuario'=> $this->input->post('idUsuario'),
                     'nombreUsuario'=> $this->input->post('nombreUsuario'),
                     'apellidosUsuario'=> $this->input->post('apellidosUsuario'),
                     'telefonoUsuario'=> $this->input->post('telefonoUsuario'),
                     'emailUsuario'=> $this->input->post('emailUsuario'),
                     'contraseñaUsuario'=> $this->input->post('contraseñaUsuario')
+                    */
                 );
                     
                 //Crea la sesión con los datos del array
                 //Redirecciona al perfil de usuario
                 $this->session->set_userdata($usuario_data);
-                redirect('AdopcionesCrud/index');
+                redirect('MiControlador/index/5');
+                
 
             }else{
 
                 echo "Algo mal";
+                
             }
     		
     	}

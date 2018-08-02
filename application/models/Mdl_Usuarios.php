@@ -92,7 +92,7 @@
                      ->set('apellidosUsuario', $this->_apellidosUsuario)
                      ->set('telefonoUsuario', $this->_telefonoUsuario)
                      ->set('emailUsuario', $this->_emailUsuario)
-                     ->set('contraseñaUsuario', "AES_ENCRYPT('{$this->_contraseñaUsuario}','{$this->_nombreUsuario}')", FALSE)
+                     ->set('contraseñaUsuario', "AES_ENCRYPT('{$this->_contraseñaUsuario}','{$this->_emailUsuario}')", FALSE)
                      ->set('estatusUsuarios_idEstatusUsuarios', 1);
 
             $this->db->insert('usuarios');

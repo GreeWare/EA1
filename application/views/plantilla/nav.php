@@ -27,9 +27,9 @@
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/Eventos/listar';?>">Eventos</a>
-            <?php if($this->session->has_userdata('idUsuario')){ ?>
+            <?php if($this->session->has_userdata('idUsuarios')){ ?>
                 <li class="nav-item px-lg-4">
-                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/AdopcionesCrud/index';?>">Perfil</a>
+                  <a class="nav-link text-uppercase text-expanded" href="<?=base_url().'index.php/MiControlador/index/5';?>">Perfil</a>
                 </li>
               <?php }else{ ?>
                 <li class="nav-item px-lg-4">

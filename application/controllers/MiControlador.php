@@ -43,7 +43,7 @@ class MiControlador extends CI_Controller{
 				break;	
 			case 4: $this->load->view('front_end/vw_login');
 				break;	
-			case 5: $this->load->view('front_end/vw_perfil');	
+			case 5: $this->load->view('front_end/vw_carrito');	
 				break;
 			case 6: $this->load->view('front_end/vw_donaciones');	
 				break;
