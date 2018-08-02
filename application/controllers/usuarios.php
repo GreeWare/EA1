@@ -25,30 +25,54 @@
         */
     	public function save()
     	{
+            $nombre = $this->input->post('name');
+            $apellidoz = $this->input->post('apellidos');
+            $phone = $this->input->post('telefono');
+            $corr = $this->input->post('email');
+            $pass = $this->input->post('contrasena');
 
-            $this->Mdl_Usuarios->setnombreUsuario($this->input->post('name'));
-            $this->Mdl_Usuarios->setapellidosUsuario($this->input->post('apellidos'));
-            $this->Mdl_Usuarios->settelefonoUsuario($this->input->post('telefono'));
-            $this->Mdl_Usuarios->setemailUsuario($this->input->post('email'));
-            $this->Mdl_Usuarios->setcontraseñaUsuario($this->input->post('contrasena'));
+            $this->form_validation->set_rules('name', 'Nombre', 'trim|required');
+            $this->form_validation->set_rules('apellidos', 'Apellidos', 'trim|required');
+            $this->form_validation->set_rules('telefono', 'TelefÃ³no', 'trim|required');
+            $this->form_validation->set_rules('email', 'Correo', 'trim|required');
+            $this->form_validation->set_rules('contrasena', 'ContraseÃ±a', 'trim|required');
 
-            $email_check=$this->Mdl_Usuarios->email_check($this->Mdl_Usuarios->getemailUsuario());
+            $this->form_validation->set_message('required', 'El campo %s es obligatorio');
+            $this->form_validation->set_message('trim', 'El campo %s es obligatorio');
 
-            if($email_check == 0){
-                $this->Mdl_Usuarios->save();
-                $Vc['NoR']= 0;
+            if($this->form_validation->run()===FALSE)
+            {
+
                 $this->load->view('plantilla/nav');
                 $this->load->view('plantilla/header');
-                $this->load->view('front_end/vw_login', $Vc);
+                $this->load->view('front_end/vw_registro');
                 $this->load->view('plantilla/footer');
+
             }else{
-                $Vc['YaR']= 0;
-                $this->load->view('plantilla/nav');
-                $this->load->view('plantilla/header');
-                $this->load->view('front_end/vw_registro', $Vc);
-                $this->load->view('plantilla/footer');
+
+                $this->Mdl_Usuarios->setnombreUsuario($nombre);
+                $this->Mdl_Usuarios->setapellidosUsuario($apellidoz);
+                $this->Mdl_Usuarios->settelefonoUsuario($phone);
+                $this->Mdl_Usuarios->setemailUsuario($corr);
+                $this->Mdl_Usuarios->setcontraseñaUsuario($pass);
+
+                $email_check=$this->Mdl_Usuarios->email_check($this->Mdl_Usuarios->getemailUsuario());
+
+                if($email_check == 0){
+                    $this->Mdl_Usuarios->save();
+                    $Vc['NoR']= 0;
+                    $this->load->view('plantilla/nav');
+                    $this->load->view('plantilla/header');
+                    $this->load->view('front_end/vw_login', $Vc);
+                    $this->load->view('plantilla/footer');
+                }else{
+                    $Vc['YaR']= 0;
+                    $this->load->view('plantilla/nav');
+                    $this->load->view('plantilla/header');
+                    $this->load->view('front_end/vw_registro', $Vc);
+                    $this->load->view('plantilla/footer');
+                }
             }
-            
     	}
 
         /**
