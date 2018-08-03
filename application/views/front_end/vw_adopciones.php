@@ -29,7 +29,7 @@
           <div class="service-box">
 
             <div id="imagenAdopcion">
-              <img class="img-rounded" src="<?=base_url();?><?=$adopcion->imagenAdopcion;?>" />
+              <img class="img-rounded" src="<?=base_url();?>img/<?=$adopcion->imagenAdopcion;?>" />
             </div>
 
             <div id="nombreAdopcion">

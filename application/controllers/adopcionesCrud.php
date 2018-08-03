@@ -11,8 +11,7 @@ class AdopcionesCrud extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('grocery_CRUD');
-		$this->load->view('plantilla/nav');
-		$this->load->view('plantilla/header');
+		
 	}
 
 
@@ -44,7 +43,7 @@ class AdopcionesCrud extends CI_Controller
 			
 		//} catch (Exception $e) {
 
-			$crud->set_field_upload('imagenAdopcion', 'img/../');
+			$crud->set_field_upload('imagenAdopcion', './img');
 			
 		//}
 
@@ -55,7 +54,7 @@ class AdopcionesCrud extends CI_Controller
 		$this->load->view('back_end/vw_adopcionesCRUD.php', (array)$output);
 
 
-		$this->load->view('plantilla/footer');
+		
 	}
 
 		

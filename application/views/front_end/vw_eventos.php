@@ -23,7 +23,7 @@
               ?>
           <div class="span6 animated-fast flyIn">
              <div class="home-post">
-              <img  class="img-rounded" src="<?=base_url();?><?=$evento->imagenEvento;?>"  />
+              <img  class="img-rounded" src="<?=base_url();?>img/<?=$evento->imagenEvento;?>"  />
               <br>
               <h1><strong><?=$evento->nombreEvento;?></strong></h1>
               <br>
@@ -36,7 +36,7 @@
                
             </div>
           </div>
-          <br>
+         
             <?php
             endforeach;
             ?>

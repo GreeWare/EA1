@@ -15,7 +15,7 @@
               ?>
         <div class="span6 animated-fast flyIn">
           <div class="">
-            <center><img  class="team-thumb img-circle" src="<?=base_url();?><?=$contacto->imagenContacto;?>" />
+            <center><img  class="team-thumb img-circle" src="<?=base_url();?>img/<?=$contacto->imagenContacto;?>" />
             
              <h3><?=$contacto->telefonoContacto;?></h3>
               <h3><?=$contacto->emailContacto;?></h3></center>

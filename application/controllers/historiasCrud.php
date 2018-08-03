@@ -34,10 +34,13 @@ class HistoriasCrud extends CI_Controller
 
 
 		$crud->display_as($campos);
+
+		$crud->set_field_upload('imagenHistoria','./img');
+			
 		 
 		$output = $crud->render();
 
-		$this->load->view('back_end/vw_historiasCrud.php', (array)$output);
+		$this->load->view('back_end/vw_historiasCRUD.php', (array)$output);
 
 
 	}
