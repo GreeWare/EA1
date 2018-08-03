@@ -56,7 +56,7 @@ class Adopciones extends CI_Controller
         }
 
         $this->cart->insert($insert);
-        redirect('../index.php/MiControlador/index/5' , 'refresh');
+        redirect('../index.php/adopciones/listar' , 'refresh');
         
     }
 

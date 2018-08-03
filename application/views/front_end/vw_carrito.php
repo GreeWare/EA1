@@ -27,7 +27,7 @@
                     <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
                    
                         <tr>
-                            <td><img width="200px" src="<?=base_url()?><?=$items['imagenAdopcion']?>"/></td>
+                            <td><img width="200px" src="<?=base_url()?>img/<?=$items['imagenAdopcion']?>"/></td>
                             <td><?=$items['nombreAdopcion']?></td>
                             <td><?=$items['generos_idGenero']?></td>
                             <!--creamos el enlace para eliminar el producto

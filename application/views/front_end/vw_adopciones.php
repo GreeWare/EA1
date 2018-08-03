@@ -67,7 +67,13 @@
     </div>
    
     <?= form_hidden('idAdopcion', $adopcion->idAdopcion); ?>
-    <?= form_submit('action', 'Agregar al carrito'); ?>
+
+    <?php if($this->session->has_userdata('idUsuarios')){ ?>
+               <input class="btn btn-danger" type="submit" name="action" value="Agregar al carrito">
+              <?php }else{ ?>
+               
+              <?php } ?>
+    
     <?= form_close() ?>
               <!--
               <p><?=$adopcion->descripcionAdopcion;?></p>
