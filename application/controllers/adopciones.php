@@ -33,8 +33,66 @@ class Adopciones extends CI_Controller
     }
 
 
-
+    public function agregarCarrito()
+    {
+        $idAdopcion = $this->input->post('idAdopcion');
+        $adopciones = $this->mdl_Adopciones->porId($idAdopcion);
     
 
+        foreach ($adopciones as $adopcion) {
+            # code...
+        
 
+        $insert = array(
+            'id'      => $adopcion->idAdopcion,
+            'qty'     => 1,
+            'price'   => 39.95,
+            'name'    => 'T-Shirt',
+            'imagenAdopcion' => $adopcion->imagenAdopcion,
+            'nombreAdopcion' => $adopcion->nombreAdopcion,
+            'generos_idGenero' => $adopcion->generos_idGenero
+        );
+
+        }
+
+
+        if($idAdopcion = $adopcion->idAdopcion){
+
+            echo "Ya tienes ese animal agragado men";
+
+        }else{
+            
+        $this->cart->insert($insert);
+        redirect('../index.php/MiControlador/index/5' , 'refresh');
+        }
+
+        
+
+
+        
     }
+
+     function eliminarProducto($rowid) 
+    {
+        //para eliminar un producto en especifico lo que hacemos es conseguir su id
+        //y actualizarlo poniendo qty que es la cantidad a 0
+        $insert = array(
+            'rowid' => $rowid,
+            'qty' => 0
+        );
+        //después simplemente utilizamos la función update de la librería cart
+        //para actualizar el carrito pasando el array a actualizar
+        $this->cart->update($insert);
+        
+        $this->session->set_flashdata('productoEliminado', 'El producto fue eliminado correctamente');
+        redirect('../index.php/MiControlador/index/5', 'refresh');
+    }
+    
+    function eliminarCarrito() {
+        $this->cart->destroy();
+        $this->session->set_flashdata('destruido', 'El carrito fue eliminado correctamente');
+        redirect('../index.php/MiControlador/index/5', 'refresh');
+    }
+
+
+}

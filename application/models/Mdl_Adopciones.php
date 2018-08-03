@@ -27,5 +27,10 @@ class Mdl_Adopciones extends CI_Model{
 	}
 
 
+    function porId($idAdopcion) {
+        $this->db->where('idAdopcion', $idAdopcion);
+        $adopciones = $this->db->get('adopciones');
+        return $adopciones->result();
+    }
 
 }

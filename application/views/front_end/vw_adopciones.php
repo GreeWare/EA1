@@ -22,11 +22,20 @@
                 */
               foreach($adopciones as $adopcion):
               ?>
+
+              <?= form_open(base_url() . 'index.php/adopciones/agregarCarrito') ?>
+
         <div class="span4 animated-fast flyIn">
           <div class="service-box">
-            <img  class="img-rounded" src="<?=base_url();?><?=$adopcion->imagenAdopcion;?>" />
 
-            <h2><?=$adopcion->nombreAdopcion;?></h2>
+            <div id="imagenAdopcion">
+              <img class="img-rounded" src="<?=base_url();?><?=$adopcion->imagenAdopcion;?>" />
+            </div>
+
+            <div id="nombreAdopcion">
+              <h2><?=$adopcion->nombreAdopcion;?></h2>
+            </div>
+            
             
 <!--hace que se oculte la información-->
 <div class="col-xs-12 col-sm-12">
@@ -44,7 +53,13 @@
 
   <a onclick="return blmostrocult(this);" style="cursor: hand; cursor: pointer;" class="btn btn-success">Ver más</a><div class="col-xs-12 col-sm-12" style="display: none;"> 
 
-   <h3 align="justify"><?=$adopcion->descripcionAdopcion;?></h3>
+    <div id="descripcionAdopcion">
+      <h3 align="justify"><?=$adopcion->descripcionAdopcion;?></h3>
+    </div>
+   
+    <?= form_hidden('idAdopcion', $adopcion->idAdopcion); ?>
+    <?= form_submit('action', 'Agregar al carrito'); ?>
+    <?= form_close() ?>
               <!--
               <p><?=$adopcion->descripcionAdopcion;?></p>
               <p><?=$adopcion->estatusAdopcion?></p>
@@ -58,7 +73,7 @@
             </div>
 
           </div>
-        
+ 
             <?php
             endforeach;
             ?>
@@ -68,6 +83,10 @@
 
 
   <!-- end section: services -->
+
+
+
+
 
 
 
