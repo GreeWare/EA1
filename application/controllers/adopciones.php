@@ -29,7 +29,7 @@ class Adopciones extends CI_Controller
         $this->load->view('plantilla/nav');
         $data['adopciones'] = $this->mdl_Adopciones->listar();
         $this->load->view('front_end/vw_adopciones',$data); 
-         $this->load->view('plantilla/footer');
+        $this->load->view('plantilla/footer');
     }
 
 
@@ -50,25 +50,13 @@ class Adopciones extends CI_Controller
             'name'    => 'T-Shirt',
             'imagenAdopcion' => $adopcion->imagenAdopcion,
             'nombreAdopcion' => $adopcion->nombreAdopcion,
-            'generos_idGenero' => $adopcion->generos_idGenero
+            'generos_idGenero' => $adopcion->nombreGenero
         );
 
         }
 
-
-        if($idAdopcion = $adopcion->idAdopcion){
-
-            echo "Ya tienes ese animal agragado men";
-
-        }else{
-            
         $this->cart->insert($insert);
         redirect('../index.php/MiControlador/index/5' , 'refresh');
-        }
-
-        
-
-
         
     }
 

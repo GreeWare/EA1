@@ -22,15 +22,28 @@ class Mdl_Adopciones extends CI_Model{
         **/
 
 	public function listar(){
-		$adop = $this->db->get('adopciones');
-		return $adop->result(); 
+	return $this->db
+        ->select("*") # También puedes poner * si quieres seleccionar todo
+        ->from("adopciones")
+        ->join("generos", "generos.idGenero = adopciones.generos_idGenero")
+        ->join("especies", "especies.idEspecie = adopciones.especies_idEspecie")
+        ->join("estatusadopciones", "estatusadopciones.idEstatusAdopciones = adopciones.estatusAdopciones_idEstatusAdopciones")
+        ->get()
+        ->result();
 	}
 
 
     function porId($idAdopcion) {
-        $this->db->where('idAdopcion', $idAdopcion);
-        $adopciones = $this->db->get('adopciones');
-        return $adopciones->result();
+        //$this->db->where('idAdopcion', $idAdopcion);
+        //$adopciones = $this->db->get('adopciones');
+        return $this->db
+        ->select("*") # También puedes poner * si quieres seleccionar todo
+        ->from("adopciones")
+        ->where('idAdopcion', $idAdopcion)
+        ->join("generos", "generos.idGenero = adopciones.generos_idGenero")
+        ->get()
+        ->result();
+       // return $adopciones->result();
     }
 
 }

@@ -53,6 +53,15 @@
 
   <a onclick="return blmostrocult(this);" style="cursor: hand; cursor: pointer;" class="btn btn-success">Ver más</a><div class="col-xs-12 col-sm-12" style="display: none;"> 
 
+    <div id="estatusadopciones_idEstatusAdopciones">
+      <h3 align="justify"><?=$adopcion->tipoEstatusAdopcion;?></h3>
+    </div>
+    <div id="especies_idEspecie">
+      <h3 align="justify">Especie: <?=$adopcion->nombreEspecie;?></h3>
+    </div>
+    <div id="generos_idGenero">
+      <h3 align="justify">Genero: <?=$adopcion->nombreGenero;?></h3>
+    </div>
     <div id="descripcionAdopcion">
       <h3 align="justify"><?=$adopcion->descripcionAdopcion;?></h3>
     </div>
