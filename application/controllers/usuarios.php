@@ -79,47 +79,72 @@
         *Realiza el proceso de iniciar una sesión
         */
     	public function login()
-    	{
-            $user_login= array(
-                'emailUsuario'=>$this->input->post('email'),
-                'contraseñaUsuario'=>$this->input->post('contrasena')
-            );
+        {
 
-            $data= $this->Mdl_Usuarios->login($user_login['emailUsuario'],$user_login['contraseñaUsuario']);
+            $corr2 = $this->input->post('email');
+            $pass2 = $this->input->post('contrasena');
 
-            if($data)
+            $this->form_validation->set_rules('email', 'Correo', 'trim|required');
+            $this->form_validation->set_rules('contrasena', 'ContraseÃ±a', 'trim|required');
+
+            $this->form_validation->set_message('required', 'El campo %s es obligatorio');
+            $this->form_validation->set_message('trim', 'El campo %s es obligatorio');
+
+            if($this->form_validation->run()===FALSE)
             {
-                $usuario_data = array(
-                    'idUsuarios'=> $data['idUsuarios'],
-                    'nombreUsuario'=> $data['nombreUsuario'],
-                    'apellidosUsuario'=> $data['apellidosUsuario'],
-                    'telefonoUsuario'=> $data['telefonoUsuario'],
-                    'emailUsuario'=> $data['emailUsuario'],
-                    'contraseñaUsuario'=> $data['contraseñaUsuario'],
-                    'estatususuarios_idEstatusUsuarios'=> $data['estatususuarios_idEstatusUsuarios']
-                    /*
-                    'idUsuario'=> $this->input->post('idUsuario'),
-                    'nombreUsuario'=> $this->input->post('nombreUsuario'),
-                    'apellidosUsuario'=> $this->input->post('apellidosUsuario'),
-                    'telefonoUsuario'=> $this->input->post('telefonoUsuario'),
-                    'emailUsuario'=> $this->input->post('emailUsuario'),
-                    'contraseñaUsuario'=> $this->input->post('contraseñaUsuario')
-                    */
-                );
-                    
-                //Crea la sesión con los datos del array
-                //Redirecciona al perfil de usuario
-                $this->session->set_userdata($usuario_data);
-                redirect('MiControlador/index/5');
-                
+
+                $this->load->view('plantilla/nav');
+                $this->load->view('plantilla/header');
+                $this->load->view('front_end/vw_login');
+                $this->load->view('plantilla/footer');   
 
             }else{
 
-                echo "Algo mal";
-                
+                $user_login= array(
+                    'emailUsuario'=> $corr2,
+                    'contraseñaUsuario'=> $pass2
+                );
+
+                $data= $this->Mdl_Usuarios->login($user_login['emailUsuario'],$user_login['contraseñaUsuario']);
+
+                if($data)
+                {
+                    $usuario_data = array(
+                        'idUsuarios'=> $data['idUsuarios'],
+                        'nombreUsuario'=> $data['nombreUsuario'],
+                        'apellidosUsuario'=> $data['apellidosUsuario'],
+                        'telefonoUsuario'=> $data['telefonoUsuario'],
+                        'emailUsuario'=> $data['emailUsuario'],
+                        'contraseñaUsuario'=> $data['contraseñaUsuario'],
+                        'estatususuarios_idEstatusUsuarios'=> $data['estatususuarios_idEstatusUsuarios']
+                        /*
+                        'idUsuario'=> $this->input->post('idUsuario'),
+                        'nombreUsuario'=> $this->input->post('nombreUsuario'),
+                        'apellidosUsuario'=> $this->input->post('apellidosUsuario'),
+                        'telefonoUsuario'=> $this->input->post('telefonoUsuario'),
+                        'emailUsuario'=> $this->input->post('emailUsuario'),
+                        'contraseñaUsuario'=> $this->input->post('contraseñaUsuario')
+                        */
+                    );
+                        
+                    //Crea la sesión con los datos del array
+                    //Redirecciona al perfil de usuario
+                    $this->session->set_userdata($usuario_data);
+                    redirect('MiControlador/index/5');
+                    
+
+                }else{
+
+                    $Vnm['validar']= 0;
+                    $this->load->view('plantilla/nav');
+                    $this->load->view('plantilla/header');
+                    $this->load->view('front_end/vw_login', $Vnm);
+                    $this->load->view('plantilla/footer'); 
+                    
+                }
+
             }
-    		
-    	}
+        }
 
         /**
         *Realiza la función de cerrar una sesión
