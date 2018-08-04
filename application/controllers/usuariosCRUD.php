@@ -11,8 +11,7 @@ class UsuariosCrud extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('grocery_CRUD');
-		$this->load->view('plantilla/nav');
-		$this->load->view('plantilla/header');
+		
 	}
 
 
@@ -54,10 +53,10 @@ class UsuariosCrud extends CI_Controller
 		 
 		$output = $crud->render();
 
-		$this->load->view('back_end/vw_adopcionesCRUD.php', (array)$output);
+		$this->load->view('back_end/vw_usuariosCRUD.php', (array)$output);
 
 
-		$this->load->view('plantilla/footer');
+		
 	}
 
 		

@@ -24,8 +24,7 @@ foreach($css_files as $file): ?>
         <script src="<?php echo $file; ?>"></script>
     <?php endforeach; ?>
 
-    
-     <a class="boton" href="http://localhost/EA1/index.php/cpanel">Cpanel</a></center>
+    <a class="boton" href="http://localhost/EA1/index.php/cpanel">Cpanel</a></center>
 
 <style type="text/css">
   .boton{

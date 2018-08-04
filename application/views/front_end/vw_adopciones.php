@@ -8,7 +8,7 @@
           <div class="row"> 
             <h2>
               Los animalitos que veras aquí necesitan encontrar un hogar donde los traten con los cuidados y mucho amor.              <br>
-              <br><strong>Dales la oportunidad de tener una familia!!</strong>
+              <br><strong>¡Dales la oportunidad de tener una familia!</strong>
             </h2>
           </div>
 
