@@ -11,7 +11,7 @@
     <link href="<?=base_url();?>/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?php echo base_url()?>/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url()?>/color/default.css" rel="stylesheet">
-    <link rel="shortcut icon" href="<?=base_url()?>/img/favicon.ico">
+    <link rel="shortcut icon" href="<?=base_url()?>/img/logo.fw.png">
     
     <!-- =======================================================
     Theme Name: Maxim

@@ -35,7 +35,7 @@
 				<div class="span6">
 					<div class="home-post">
 						<div class="post-image">
-							<img  class="team-thumb" src="<?=base_url();?>img/<?=$historia->imagenInicio;?>">
+							<img  class="team-thumb" src="<?=base_url();?>img/<?=$historia->imagenHistoria;?>">
 						</div>
 						<div class="post-meta">
 							<i class="icon-heart icon-2x"></i>
