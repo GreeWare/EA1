@@ -145,6 +145,19 @@
             }
         }
 
+
+
+
+        function porId($idUsuarios) {
+        return $this->db
+        ->select("*") # También puedes poner * si quieres seleccionar todo
+        ->from("usuarios")
+        ->where('idUsuarios', $idUsuarios)
+        ->get()
+        ->result();
+
+    }
+
 	}
 
 ?>
