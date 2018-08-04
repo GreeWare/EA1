@@ -27,6 +27,17 @@ class Formulario extends CI_Controller
     }
 
 
+    public function porId(){
+
+         $idFormato = 1;
+         $data['formatos'] = $this->Mdl_Formulario->porId($idFormato);
+         $this->load->view('front_end/pdf',$data);  
+
+    }
+
+
+       
+       
 
 
 
