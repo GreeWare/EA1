@@ -3,13 +3,23 @@
 		
 		<center><nav class="navbar">
 			
-		<a href="<?=base_url();?>index.php/usuariosCRUD"><button class="btn btn-theme"><h1>Usuarios</h1></button></a>
-		<a href="<?=base_url();?>index.php/adopcionesCRUD"><button class="btn btn-danger"><h1>Adopciones</h1></button></a>
-		<a href="<?=base_url();?>index.php/historiasCRUD"><button class="btn btn-primary"><h1>Historias<h1></button></a>
-		<a href="<?=base_url();?>index.php/especiesCRUD"><button class="btn btn-warning"><h1>Especies<h1></button></a>
-		<a href="<?=base_url();?>index.php/eventosCRUD"><button class="btn btn-info"><h1>Eventos<h1></button></a>
-		<a href="<?=base_url();?>index.php/contactosCRUD"><button class="btn btn-white"><h1>Contactos<h1></button></a>	
-				
+		
+				<a href="<?=base_url();?>index.php/usuariosCRUD"><button class="btn btn-theme"><h1>Usuarios</h1></button></a>
+				<a href="<?=base_url();?>index.php/adopcionesCRUD"><button class="btn btn-danger"><h1>Adopciones</h1></button></a>
+	
+		
+			<a href="<?=base_url();?>index.php/historiasCRUD"><button class="btn btn-primary"><h1>Historias<h1></button></a>
+			<a href="<?=base_url();?>index.php/especiesCRUD"><button class="btn btn-warning"><h1>Especies<h1></button></a>
+		
+
+
+		
+			<a href="<?=base_url();?>index.php/eventosCRUD"><button class="btn btn-info"><h1>Eventos<h1></button></a>
+			<a href="<?=base_url();?>index.php/contactosCRUD"><button class="btn btn-white"><h1>Contactos<h1></button></a>	
+			<a href="<?=base_url();?>index.php/formatosCRUD"><button class="btn btn-danger"><h1>Formatos<h1></button></a>
+		
+		
+
 		</nav></center>
 
 		</div>

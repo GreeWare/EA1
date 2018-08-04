@@ -36,8 +36,10 @@
 	</div>
 	<div class="span3">
 		<h1>Gracias por tu aportación</h1>
-		<img src="<?=base_url();?>img/logo.fw.png">
+		<img src="<?=base_url();?>img/donacion.png">
+		<br>
 	</div>
+	
 </div>
-
+<br>
 </div>

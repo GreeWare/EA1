@@ -8,9 +8,7 @@
 
 
 
-                  
-                  
-      
+        
                     <table width="100%" style="text-align: center">
                         <tr>
                             <th>Imagen</th>
