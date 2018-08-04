@@ -27,13 +27,13 @@
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="Z732G64LEN49G">
-				<button class="btn btn-theme " type="submit" border="0" alt="PayPal, la forma más segura y rápida de pagar en línea." style="height: 10%; width: 30%; font-size: 20px"><strong>Donar</strong></button>
+				<button class="btn btn-theme " type="submit" border="0" alt="PayPal, la forma más segura y rápida de pagar en línea." style=" font-size: 20px"><strong>Donar</strong></button>
 				<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
 				</form>
 
 
 		</div>
-	</div>s
+	</div>
 	<div class="span3">
 		<h1>Gracias por tu aportación</h1>
 		<img src="<?=base_url();?>img/logo.fw.png">

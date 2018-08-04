@@ -46,7 +46,22 @@
                     </table>
                     
             <!--fin de nuestro carrito-->
-                  <a class="btn btn-danger" href="<?php echo base_url()?>index.php/usuarios/logout">Cerrar Sesión</a></center>
+
+            <div>
+              <a href="<?php echo base_url()?>index.php/usuarios/logout"><button class="btn btn-danger">Cerrar Sesión</button></a>
+              <?php
+              if($this->cart->contents()){
+              ?>
+                <a href="<?php echo base_url()?>index.php/formulario/index"><button class="btn btn-success">Adoptar</button></a>
+              <?php
+              }else{
+
+              }
+              ?>
+              
+            </div>
+              
+                  
         </div>
       </div>
       </div>
