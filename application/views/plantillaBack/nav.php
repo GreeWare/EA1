@@ -2,9 +2,18 @@
 	<div class="inner">
 		
 		<center><nav class="navbar">
+
 			
-		
+			
+			<?php
+				if($this->session->userdata('estatususuarios_idEstatusUsuarios') == 3){
+			?>
 				<a href="<?=base_url();?>index.php/usuariosCRUD"><button class="btn btn-theme"><h1>Usuarios</h1></button></a>
+			<?php
+					}else{
+
+					}
+			?>
 				<a href="<?=base_url();?>index.php/adopcionesCRUD"><button class="btn btn-danger"><h1>Adopciones</h1></button></a>
 	
 		

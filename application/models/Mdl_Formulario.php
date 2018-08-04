@@ -20,22 +20,6 @@ class Mdl_Formulario extends CI_Model{
 	}
 
 
-	function porId($idFormato) {
-        //$this->db->where('idAdopcion', $idAdopcion);
-        //$adopciones = $this->db->get('adopciones');
-        return $this->db
-        ->select("*") # También puedes poner * si quieres seleccionar todo
-        ->from("formato")
-        ->where('idFormato', $idFormato)
-        ->get()
-        ->result();
-       // return $adopciones->result();
-    }
-
-
-    
-
-
 	public function getidFormato(){
     	return $this->_idFormato;
     }
@@ -134,6 +118,18 @@ class Mdl_Formulario extends CI_Model{
             $this->db->insert('formato');
 
         }
+
+
+    function porId($idUsuarios) {
+ 
+        return $this->db
+        ->select("*") # También puedes poner * si quieres seleccionar todo
+        ->from("formato")
+        ->where('folioUsuarios', $idUsuarios)
+        ->get()
+        ->result();
+    }
+
 
 
 }

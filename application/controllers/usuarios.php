@@ -131,7 +131,13 @@
                     //Crea la sesión con los datos del array
                     //Redirecciona al perfil de usuario
                     $this->session->set_userdata($usuario_data);
-                    redirect('MiControlador/index/5');
+
+                        if($data['estatususuarios_idEstatusUsuarios'] == 1){
+                            redirect('MiControlador/index/5');
+                        }else if($data['estatususuarios_idEstatusUsuarios'] == 2 || $data['estatususuarios_idEstatusUsuarios'] == 3){
+                            redirect('cpanel');
+                        }
+                        
                     
 
                 }else{

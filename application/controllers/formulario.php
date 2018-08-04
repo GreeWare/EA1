@@ -25,20 +25,7 @@ class Formulario extends CI_Controller
     	$this->load->view('plantilla/header');
     	$this->load->view('front_end/vw_formFormulario');	
         $this->load->view('plantilla/footer');
-    }
-
-
-    public function porId(){
-
-         $idFormato = 1;
-         $data['formatos'] = $this->Mdl_Formulario->porId($idFormato);
-         $this->load->view('front_end/pdf',$data);  
-
-    }
-
-
-
-       
+    }    
        
 
     public function saveForm(){
@@ -92,14 +79,12 @@ class Formulario extends CI_Controller
                 
                 $this->Mdl_Formulario->save();
                 redirect(base_url().'index.php/Adopciones/listar');
+
+
+                $data['formatos'] = $this->Mdl_Formulario->porId($idUsuarios);
                
                 
             }
     }
-
-
-
-
-
 
 }
