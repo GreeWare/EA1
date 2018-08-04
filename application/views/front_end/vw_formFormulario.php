@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="span6 aligncenter">
                    
-                        <form action="<?php echo base_url().'index.php/usuarios/save';?>" method="post">
+                        <form action="<?php echo base_url().'index.php/formulario/saveForm';?>" method="post">
 
 
                               <?php $i = 1; ?>
@@ -31,7 +31,8 @@
 
 
                     <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
-                            $items['idAdopcion']
+                            <input type="hidden" name="idUsuarios" value="<?= $this->session->userdata('idUsuarios');?>">
+                            <input type="hidden" name="adopciones_idAdopcion" value="<?=$items['id']?>"/>
                             <img width="200px" src="<?=base_url()?>img/<?=$items['imagenAdopcion']?>"/>
                                 <div class="field your-name form-group">
                                         <input type="text" class="form-control" placeholder="<?=$items['nombreAdopcion']?>" data-rule="minlen:4" data-msg="Introduzca 4 letras mínimo" readonly="readonly"/>
@@ -44,25 +45,21 @@
 
                         <?php endforeach; ?>
 
-                                    <div class="field your-name form-group">
+                                    <div class="field your-calle form-group">
                                         <input type="text" name="calle" class="form-control" placeholder="Dirección" data-rule="minlen:4" data-msg="Introduzca 4 letras mínimo" />
                                         <div class="validation"></div>
                                     </div>
-                                    <div class="field your-name form-group">
+                                    <div class="field your-colonia form-group">
                                         <input type="text" name="colonia" class="form-control" placeholder="Colonia" data-rule="minlen:4" data-msg="Introduzca 4 letras mínimo" />
                                         <div class="validation"></div>
                                     </div>
-                                    <div class="field your-name form-group">
+                                    <div class="field your-municipio form-group">
                                         <input type="text" name="municipio" class="form-control" placeholder="Municipio" data-rule="minlen:10" data-msg="Introduzca 4 letras mínimo" />
-                                        <div class="validation"></div>
-                                    </div>
-                                    <div class="field your-email form-group">
-                                        <input type="text" class="form-control" name="ciudad" placeholder="Ciudad" data-rule="minlen:4" data-msg="Introduzca 4 letras mínimo" />
                                         <div class="validation"></div>
                                     </div>
                                     
                              
-                                    <button  type="submit" value="Registrar" class="btn btn-success">Registrar</a>
+                                    <button  type="submit" value="Confirmar" class="btn btn-success">Confirmar</a>
                                     
                   </div>
                 </div>

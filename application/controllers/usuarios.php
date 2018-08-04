@@ -23,6 +23,7 @@
         /**
         *Realiza el proceso de registrar un nuevo usuario
         */
+
     	public function save()
     	{
             $nombre = $this->input->post('name');
